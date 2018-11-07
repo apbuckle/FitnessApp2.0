@@ -8,10 +8,36 @@
 
 
 # create all workouts
-legs = Workout.create
+legs = Workout.create(
+    title: "Leg Day",
+    day: "Monday and Friday"
+)
+
+upperBody = Workout.create(
+    title: "Swole Patrol",
+    day: "Tuesday and Saturday"
+)
 
 # create all exercises
-squats = Exercise.create
+squats = Exercise.create(
+    name: "Squats",
+    muscles: "Glutes, Quads, Hamstrings"
+)
+
+deadlifts = Exercise.create(
+    name: "Deadlifts",
+    muscles: "Glutes, Quads, Hamstrings"
+)
+
+lunges = Exercise.create(
+    name: "Lunges",
+    muscles: "Glutes, Quads, Hamstrings"
+)
 
 # create all joins
-leg_squates = WorkoutExercise.create({workout: legs, exercise: squats, duration: 20, sets: 3})
+leg_squats = WorkoutExercise.create(
+    {workout: legs, exercise: squats, duration: 20, sets: 3})
+
+swole_Patrol = WorkoutExercise.create(
+    {workout: upperBody, exercise: deadlifts, duration: 10, sets: 5}
+)
