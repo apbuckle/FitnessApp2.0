@@ -33,25 +33,26 @@ li {
     font-style: italic;
     font-weight: bold;
     color: white;
-    text-shadow: 2px 2px 0 black;
+    text-shadow: 2px 2px 0 #ae4936;
 }
 `
 const StyledLink = styled(Link)`
     display: inline-block;
     padding: 20px 50px;
     text-decoration: none;
-    font-size: 4vw;
+    font-size: 4.5vw;
     letter-spacing: .5vw;
     /* font-weight: bold; */
     border-right: 1px solid white;
     color: white;
     font-style: italic;
-    text-shadow: 2px 2px 0 black;
+    text-shadow: 1.5px 1.5px 0 #ae4936;
     cursor: pointer;
 `
 const StyledHeader = styled.div`
-  color: #f1f1f1;
-  font-size: 8vw;
+  color: white;
+  text-shadow: 0px 3px 0 #ae4936;
+  font-size: 10vw;
   font-weight: bold;
   letter-spacing: .5vw;
 `
@@ -108,8 +109,9 @@ export default class Workouts extends Component {
     })
 
     return (
-      <StyledDiv>
-        <StyledNav> 
+    
+      <StyledDiv>       
+      <StyledNav> 
           <StyledLink to='/'>Fitness App</StyledLink>
         </StyledNav>
         <StyledHeader>Pick Your Workout</StyledHeader>

@@ -18,7 +18,7 @@ const StyledBg1 = styled.div`
   max-width: 100%;
 `
 const StyledMenu = styled.div`
-  background-color: rgba(0,0,0, 0.6);
+  background-color: rgba(0,0,0, 0.7);
   border: 0.5px solid #f1f1f1;
   position: absolute;
   transform: translate(-50%, -50%);
@@ -33,7 +33,7 @@ const StyledMenu = styled.div`
   font-size: 10vw;
   letter-spacing: 1vw;
   color: white;
-  text-shadow: 4px 4px 0 black;
+  text-shadow: 0px 4px 0 #ae4936;
   }
   h2 {
   font-size: 4vw;
