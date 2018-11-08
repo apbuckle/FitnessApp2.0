@@ -67,6 +67,19 @@ const StyledTitle = styled.div`
   margin: 10px;
   font-size: 5vw;
 `
+const StyledWorkoutLink = styled(Link)`
+    display: inline-block;
+    padding: 20px;
+    text-decoration: none;
+    font-size: 4.5vw;
+    letter-spacing: .5vw;
+    /* font-weight: bold; */
+    color: white;
+    font-style: italic;
+    text-shadow: 1.5px 1.5px 0 #ae4936;
+    cursor: pointer;
+`
+
 export default class Workouts extends Component {
   state = {
     workouts: [],
@@ -77,33 +90,32 @@ export default class Workouts extends Component {
     this.setState({ workouts: response.data })
 }  
   
-  handleChange = (event) => {
-    const newWorkout = { ...this.state.newWorkout }
-    newWorkout[event.target.name] = event.target.value
-    this.setState({ newWorkout })
-  }
+  // handleChange = (event) => {
+  //   const newWorkout = { ...this.state.newWorkout }
+  //   newWorkout[event.target.name] = event.target.value
+  //   this.setState({ newWorkout })
+  // }
   
-  handleSubmit = async (event) => {
-    event.preventDefault()
-    const response = await axios.post('/api/workouts', this.state.newWorkout)
-    const workouts = [...this.state.workouts]
-    workouts.push(response.data)
-    this.setState({ workouts })
-  }
+  // handleSubmit = async (event) => {
+  //   event.preventDefault()
+  //   const response = await axios.post('/api/workouts', this.state.newWorkout)
+  //   const workouts = [...this.state.workouts]
+  //   workouts.push(response.data)
+  //   this.setState({ workouts })
+  // }
   
-  handleDelete = async (workoutId) => {
-    const deleteResponse = await axios.delete(`/api/workouts/${workoutId}`)
-    const filteredWorkouts = this.state.workouts.filter(workout => workoutId !== workout.id)
-    this.setState({ workouts: filteredWorkouts })
-  }
+  // handleDelete = async (workoutId) => {
+  //   const deleteResponse = await axios.delete(`/api/workouts/${workoutId}`)
+  //   const filteredWorkouts = this.state.workouts.filter(workout => workoutId !== workout.id)
+  //   this.setState({ workouts: filteredWorkouts })
+  // }
   
 
   render() {
     const workoutList = this.state.workouts.map((workout, i) => {
       return (
         <StyledTitle key={i}>
-        {workout.title}
-          {/* <Link to={`/workouts/${workout.id}`}> {workout.title}</Link> */}
+          <StyledWorkoutLink to={`/workouts/${workout.id}`}> {workout.title}</StyledWorkoutLink>
           </StyledTitle>
       )
     })
