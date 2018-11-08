@@ -4,8 +4,9 @@ import axios from 'react'
 import styled from 'styled-components'
 
 const StyledBg1 = styled.div`
-  background-image: url("http://klxpress.com.my/images/rail.jpg");
-  filter: blur(1px);
+  /* background-image: url('https://8djjb4xixg-flywheel.netdna-ssl.com/wp-content/uploads/2016/06/gym_1.jpg'); */
+  background-image: url("https://wallpapercave.com/wp/wp2639534.jpg");
+  /* filter: blur(1px); */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -42,8 +43,11 @@ const StyledMenu = styled.div`
   }
 `
 const StyledStatic = styled.div`
-  background-image: url('http://i0.wp.com/www.cubebreaker.com/wp-content/uploads/2014/04/skyline-01-new-york-city.jpg');
-  /* background-image: url('https://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/1458749140/Tokyo-Skyline-Night-SKYLINES0314.jpg?itok=4BbrBw7R'); */
+  /* background-image: url("https://wallpapercave.com/wp/wp2639534.jpg"); */
+  background-image: url('https://8djjb4xixg-flywheel.netdna-ssl.com/wp-content/uploads/2016/06/gym_1.jpg');
+  /* background-image: url('https://wallpapercave.com/wp/wp2483045.jpg'); */
+  /* background-image: url('https://wallpapercave.com/wp/wp2639533.jpg'); */
+  /* background-image: url('https://wallpapercave.com/wp/wp2639554.jpg'); */
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -70,9 +74,29 @@ font-size: 4.5vw;
 font-style: italic;
 letter-spacing: .5vw;
 `
+const StyledWorkoutList = styled.div`
+  margin: 10px;
+`
 
 export default class LandingPage extends Component {
+  // state = {
+  //   workouts: [],
+  // }
+  
+  // componentDidMount = async () => {
+  //   const response = await axios.get('/api/workouts')
+  //   this.setState({ workouts: response.data })
+  // }
+
   render() {
+    // const workoutList = this.state.workouts.map((workout, i) => {
+    //   return (
+    //     <div key={i}>
+    //     {workout.title}
+    //     </div>
+    //   )
+    // })
+
      return (
       <div>
         <main className="wrapper">
@@ -87,8 +111,9 @@ export default class LandingPage extends Component {
           </section>
           <section className="section static">
           <StyledStatic>
-              <ul className="workoutList">
-              </ul>
+              <StyledWorkoutList className="workoutList">
+              {/* {workoutList} */}
+              </StyledWorkoutList>
               </StyledStatic>
               </section>
 
