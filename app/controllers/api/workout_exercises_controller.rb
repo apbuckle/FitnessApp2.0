@@ -8,8 +8,6 @@ class Api::WorkoutExercisesController < ApplicationController
           "exercises" => @exercises,
           "workout_exercises" => @workout_exercises,
         }
-        # @hydrated = @workout_exercises.collect{ |we| we[:test] = '7'}
-        #map through workout_exercises to get all exercise info
         render json: @allInfo
       end
     
