@@ -11,7 +11,6 @@ export default class WorkoutPage extends Component {
     }
     componentDidMount = async () => {
       const id = this.props.match.params.id
-      // const exerciseId = this.state.workout_exercises.exercise_id
       const { data } = await axios.get(`/api/workouts/${id}/workout_exercises`)
       console.log(data)
       const exercises = data.exercises.map( (exercise, i) => {
@@ -26,19 +25,16 @@ export default class WorkoutPage extends Component {
         title: data.workout.title
       }
       console.log({workout})
-      // const responseTwo = await axios.get(`/api/exercises/1`)
-      // console.log('these are exercises ' + responseTwo.data.name)
-      // this.setState({ workout_exercises: response.data , exercises: responseTwo.data})
+      this.setState({ workout_exercises: exercises})
   }  
   render() {
     const workoutExerciseList = this.state.workout_exercises.map((workout_exercise, i) => {
       return (
         <div key={i}>
-        sets: {workout_exercise.sets}, duration: {workout_exercise.duration}, exercise name: {workout_exercise.exercise_id}
+        Exercise: {workout_exercise.name} <br/> {workout_exercise.sets} sets of {workout_exercise.duration} reps
         </div>
       )
     })
-    // MAP OVER WORKOUT.EXERCISES TO OUTPUT EXCERSIZE INFO
     return (
       <div>
         List of all Exercises for this Workout
