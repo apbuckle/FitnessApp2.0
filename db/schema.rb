@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2018_11_07_180033) do
     t.string "name"
     t.string "muscles"
     t.string "photo_url"
+    t.string "misc"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
