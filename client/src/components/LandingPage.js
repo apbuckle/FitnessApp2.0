@@ -4,7 +4,6 @@ import axios from 'axios'
 import styled from 'styled-components'
 
 const StyledBg1 = styled.div`
-  /* background-image: url('https://8djjb4xixg-flywheel.netdna-ssl.com/wp-content/uploads/2016/06/gym_1.jpg'); */
   background-image: url("https://wallpapercave.com/wp/wp2639534.jpg");
   /* filter: blur(1px); */
   background-position: center;
@@ -52,11 +51,7 @@ const StyledMenu = styled.div`
   }
 `
 const StyledStatic = styled.div`
-  /* background-image: url("https://wallpapercave.com/wp/wp2639534.jpg"); */
   background-image: url('https://8djjb4xixg-flywheel.netdna-ssl.com/wp-content/uploads/2016/06/gym_1.jpg');
-  /* background-image: url('https://wallpapercave.com/wp/wp2483045.jpg'); */
-  /* background-image: url('https://wallpapercave.com/wp/wp2639533.jpg'); */
-  /* background-image: url('https://wallpapercave.com/wp/wp2639554.jpg'); */
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -66,43 +61,21 @@ const StyledStatic = styled.div`
   min-height: 100vh;
   max-width: 100%;
 `
-// const StyledNav = styled.nav`
-// position: fixed;
-// width: 100%;
-// list-style-type: none;
-// margin: 0;
-// padding: 0;
-// overflow: hidden;
-// top: 0;
-// background: rgba(255,255,255, .2);
-// li {
-//     display: inline-block;
-//     padding: 20px 50px;
-//     /* text-decoration: none; */
-//     font-size: 4vw;
-//     letter-spacing: .6vw;
-//     font-style: italic;
-//     font-weight: bold;
-//     color: white;
-//     text-shadow: 2px 2px 0 #ae4936;
-// }
+
+// const StyledLink = styled(Link)`
+// display: inline-block;
+// padding: 10px 40px;
+// /* align-items: center; */
+// justify-content: center;
+// text-decoration: none;
+// border-right: 1px solid white;
+// color: white;
+// cursor: pointer;
+// font-size: 4.5vw;
+// font-style: italic;
+// letter-spacing: .5vw;
+// text-shadow: 1.5px 1.5px 0 #ae4936;
 // `
-
-const StyledLink = styled(Link)`
-display: inline-block;
-padding: 10px 40px;
-/* align-items: center; */
-justify-content: center;
-text-decoration: none;
-border-right: 1px solid white;
-color: white;
-cursor: pointer;
-font-size: 4.5vw;
-font-style: italic;
-letter-spacing: .5vw;
-text-shadow: 1.5px 1.5px 0 #ae4936;
-
-`
 const StyledHeader = styled.div`
   color: white;
   text-shadow: 0px 3px 0 #ae4936;
@@ -146,19 +119,6 @@ export default class LandingPage extends Component {
     this.setState({ workouts: response.data })
   }
 
-  // windowOnscroll = function() {myFunction()}
-  
-  // menu = document.getElementById("myHeader")
-  // sticky = menu.offsetTop
-  
-  // myFunction() {
-  //   if (window.pageYOffset > sticky) {
-  //     menu.classList.add("sticky")
-  //   } 
-  //   else {
-  //     menu.classList.remove("sticky")
-  //   }
-  // }
 
   render() {
     const workoutList = this.state.workouts.map((workout, i) => {
@@ -173,7 +133,7 @@ export default class LandingPage extends Component {
       <div>
         <main className="wrapper">
           <StyledBg1 className="section parallax bg1">
-          <div class="top-container">
+          <div className="top-container">
           </div>   
               <StyledMenu id="myHeader">
                   <h1>FitnessApp</h1>
@@ -182,9 +142,6 @@ export default class LandingPage extends Component {
           </StyledBg1>
 
           <StyledStatic className="content">
-          {/* <StyledNav>
-          <StyledLink to='/'>Fitness App</StyledLink>
-          </StyledNav> */}
           <StyledHeader>Workouts</StyledHeader>
               <StyledList className="workoutList">
               {workoutList}
@@ -194,22 +151,6 @@ export default class LandingPage extends Component {
 
       </main>
   </div>
-//   <script>
-//   window.onscroll = function() {myFunction()}
-  
-//   var menu = document.getElementById("myHeader")
-//   var sticky = menu.offsetTop
-  
-//   function myFunction() {
-//     if (window.pageYOffset > sticky) {
-//       menu.classList.add("sticky")
-//     } 
-//     else {
-//       menu.classList.remove("sticky")
-//     }
-//   }
-//   </script>
-// </div>
     )
   }
 }
