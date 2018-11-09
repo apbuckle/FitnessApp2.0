@@ -1,8 +1,16 @@
 class Api::WorkoutExercisesController < ApplicationController
     def index
+        @workout = Workout.find(params[:workout_id])
+        @exercises = @workout.exercises
         @workout_exercises = Workout.find(params[:workout_id]).workout_exercise
+        @allInfo = {
+          "workout" => @workout,
+          "exercises" => @exercises,
+          "workout_exercises" => @workout_exercises,
+        }
+        # @hydrated = @workout_exercises.collect{ |we| we[:test] = '7'}
         #map through workout_exercises to get all exercise info
-        render json: @workout_exercises
+        render json: @allInfo
       end
     
       def show
