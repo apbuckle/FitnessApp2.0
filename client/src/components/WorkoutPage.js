@@ -1,13 +1,27 @@
 import React, { Component } from 'react'
 // import { Link } from 'react-router-dom'
 import axios from 'axios'
-// import styled from 'styled-components'
+import styled from 'styled-components'
+
+const StyledBackground = styled.div`
+  background-color:gray;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  max-width: 100%;
+`
 
 
 export default class WorkoutPage extends Component {
     state = {
         workout_exercises: [],
         exercises: [],
+        workouts: [],
     }
     componentDidMount = async () => {
       const id = this.props.match.params.id
@@ -35,12 +49,14 @@ export default class WorkoutPage extends Component {
         </div>
       )
     })
+   
+    
     return (
-      <div>
-        List of all Exercises for this Workout
+      <StyledBackground>
+        <h1>Your Workout</h1>
         {workoutExerciseList}
 
-      </div>
+      </StyledBackground>
     )
   }
 }
