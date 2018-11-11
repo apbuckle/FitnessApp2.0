@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2018_11_07_180033) do
   create_table "exercises", force: :cascade do |t|
     t.string "name"
     t.string "muscles"
+    t.string "category"
     t.string "photo_url"
     t.string "misc"
     t.datetime "created_at", null: false
@@ -38,6 +39,7 @@ ActiveRecord::Schema.define(version: 2018_11_07_180033) do
   create_table "workouts", force: :cascade do |t|
     t.string "title"
     t.string "day"
+    t.string "level"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

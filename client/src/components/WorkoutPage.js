@@ -42,6 +42,7 @@ export default class WorkoutPage extends Component {
       this.setState({ workout_exercises: exercises})
   }  
   render() {
+    // const workout = this.state.workout
     const workoutExerciseList = this.state.workout_exercises.map((workout_exercise, i) => {
       return (
         <div key={i}>
@@ -53,7 +54,7 @@ export default class WorkoutPage extends Component {
     
     return (
       <StyledBackground>
-        <h1>Your Workout</h1>
+        <h1>Savage</h1>
         {workoutExerciseList}
 
       </StyledBackground>
