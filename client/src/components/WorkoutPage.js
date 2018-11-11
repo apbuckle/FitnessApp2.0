@@ -45,6 +45,7 @@ justify-content: center;
 text-decoration: none;
 border-right: 1px solid white;
 color: white;
+font-style: italic;
 cursor: pointer;
 font-size: 3vw;
 /* font-style: italic; */
