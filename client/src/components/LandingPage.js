@@ -33,7 +33,7 @@ const StyledMenu = styled.div`
   text-align: center;
   margin: 0;
   h1 {
-  font-size: 15vw;
+  font-size: 12vw;
   letter-spacing: 1vw;
   color: white;
   text-shadow: 0px 3px 0 #ae4936;
@@ -48,7 +48,7 @@ const StyledMiddle = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 35vh;
+  min-height: 50vh;
   max-width: 100%;
   /* color: white; */
   `
@@ -85,14 +85,16 @@ top: 0;
 background: rgba(0,0,0, .4);
 li {
     display: inline-block;
-    padding: 20px 50px;
+    padding: 10px 40px;
     /* text-decoration: none; */
-    font-size: 4vw;
-    letter-spacing: .6vw;
+    font-size: 3vw;
+    letter-spacing: .5vw;
     font-style: italic;
-    font-weight: bold;
+    /* font-weight: bold; */
     color: white;
-    text-shadow: 1px 1px 0 black;
+    border-right: 1px solid white;
+    text-shadow: 1.5px 1.5px 0 #ae4936;
+    cursor: pointer;
 }
 `
 
@@ -105,13 +107,14 @@ text-decoration: none;
 border-right: 1px solid white;
 color: white;
 cursor: pointer;
-font-size: 4.5vw;
-font-style: italic;
+font-size: 3vw;
+/* font-style: italic; */
 letter-spacing: .5vw;
 text-shadow: 1.5px 1.5px 0 #ae4936;
 `
 
 const StyledHeader = styled.div`
+  /* position: absolute; */
   color: white;
   text-shadow: 0px 3px 0 #ae4936;
   font-size: 10vw;
@@ -129,12 +132,13 @@ const StyledList = styled.div`
 `
 const StyledTitle = styled.div`
   margin: 10px;
+  
 `
 const StyledWorkoutLink = styled(Link)`
     display: inline-block;
     padding: 5px;
     text-decoration: none;
-    font-size: 4.5vw;
+    font-size: 5vw;
     letter-spacing: .5vw;
     /* font-weight: bold; */
     color: white;
@@ -185,10 +189,13 @@ export default class LandingPage extends Component {
 
           <StyledStatic className="content">
           <StyledNav>
-          <StyledLink to='/exercises'>Exercises</StyledLink>
+            <li>Savage</li>
+            <StyledLink to='/exercises'>Exercises</StyledLink>
+
           </StyledNav>
+          <StyledList>
           <StyledHeader>Workouts</StyledHeader>
-              <StyledList className="workoutList">
+              
               {workoutList}
               </StyledList>
               </StyledStatic>

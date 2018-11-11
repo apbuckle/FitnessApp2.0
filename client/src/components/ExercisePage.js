@@ -11,17 +11,18 @@ margin: 0;
 padding: 0;
 overflow: hidden;
 top: 0;
-background: rgba(0,0,0, .4);
+background: rgba(0,0,0);
 li {
     display: inline-block;
-    padding: 20px 50px;
+    padding: 10px 40px;
     /* text-decoration: none; */
-    font-size: 4vw;
-    letter-spacing: .6vw;
+    font-size: 3vw;
+    letter-spacing: .5vw;
     font-style: italic;
-    font-weight: bold;
+    /* font-weight: bold; */
     color: white;
-    text-shadow: 1px 1px 0 black;
+    border-right: 1px solid white;
+    text-shadow: 1.5px 1.5px 0 #ae4936;
 }
 `
 const StyledLink = styled(Link)`
@@ -33,23 +34,53 @@ text-decoration: none;
 border-right: 1px solid white;
 color: white;
 cursor: pointer;
-font-size: 4.5vw;
+font-size: 3vw;
 font-style: italic;
 letter-spacing: .5vw;
 text-shadow: 1.5px 1.5px 0 #ae4936;
 `
+
 const StyledBody = styled.div`
-  background-image: url("https://millionairesdigest.files.wordpress.com/2016/07/original.jpg");
+  background-color: black;
   background-position: absolute;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
   min-height: 100vh;
   max-width: 100%;
   color: white;
+`
+const StyledHeader = styled.div`
+  background-color: black;
+  text-align: center;
+  display: flex;
+  position: fixed;
+  top: 0;
+  color: white;
+  text-shadow: 0px 3px 0 #ae4936;
+  font-size: 8vw;
+  font-weight: bold;
+  letter-spacing: 1vw;
+  margin-top: 45px;
+  margin-left: 10px;
+  padding: 9px;
+  /* margin: 20px; */
+`
+const StyledItems = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-left: 25px;
+  padding: 5px;
+  font-size: 3vw;
+`
+const StyledList = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 140px;
+  /* position: fixed; */
 `
 
 export default class ExercisePage extends Component {
@@ -64,10 +95,10 @@ export default class ExercisePage extends Component {
   render() {
     const exerciseList = this.state.exercises.map((exercise, i) => {
         return (
-          <div key={i}>         
+          <StyledItems key={i}>         
           {exercise.name} 
           {/* <br/> Primary Muscles: {exercise.muscles} */}
-            </div>
+            </StyledItems>
         )
     })
 
@@ -75,12 +106,14 @@ export default class ExercisePage extends Component {
     return (
       <div>
         <StyledNav>
-          <StyledLink to='/'>Workouts</StyledLink>
+          <StyledLink to='/'>Savage</StyledLink>
         </StyledNav>
         <StyledBody>
-        </StyledBody>
-          <h1>EXERCISES</h1>
+          <StyledHeader>EXERCISES</StyledHeader>
+          <StyledList>
         {exerciseList}
+        </StyledList>
+        </StyledBody>
       </div>
     )
   }
