@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
+import axios from 'axios';
 import { Link } from 'react-router-dom'
-import axios from 'axios'
 import styled from 'styled-components'
 
 const StyledNav = styled.nav`
@@ -39,7 +39,6 @@ font-style: italic;
 letter-spacing: .5vw;
 /* text-shadow: 1.5px 1.5px 0 #ae4936; */
 `
-
 const StyledBody = styled.div`
   background-color: #A19060;
   background-position: absolute;
@@ -70,53 +69,23 @@ const StyledHeader = styled.div`
   width: 100%;
   /* margin: 20px; */
 `
-const StyledItems = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-left: 25px;
-  padding: 5px;
-  font-size: 3vw;
-`
-const StyledList = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-top: 150px;
-  /* position: fixed; */
-`
 
-export default class ExercisePage extends Component {
+
+export default class SingleExercisePage extends Component {
     state = {
-        exercises: [],
+        exercises: []
     }
-
-    componentDidMount = async () => {
-        const response = await axios.get('/api/exercises')
-        this.setState({ exercises: response.data })
-    }  
-  render() {
-    const exerciseList = this.state.exercises.map((exercise, i) => {
-        return (
-          <StyledItems key={i}>         
-          <Link to={`/exercises/${exercise.id}`}>{exercise.name} </Link>
-          <br/> Primary Muscles: {exercise.primary_muscles}
-          <br/> Secondary Muscles: {exercise.secondary_muscles}
-            </StyledItems>
-        )
-    })
-
-  
+    render() {
     return (
       <div>
-        <StyledNav>
+          <StyledNav>
           <StyledLink to='/'>Terminus</StyledLink>
-        </StyledNav>
-        <StyledBody>
-          <StyledHeader>EXERCISES</StyledHeader>
-          <StyledList>
-        {exerciseList}
-        </StyledList>
-        </StyledBody>
+          <StyledLink to='/exercises'>Exercises</StyledLink>
+          </StyledNav>
+          <StyledBody>
+              <StyledHeader>Learn more about each exercise</StyledHeader>
+          </StyledBody>
       </div>
     )
-  }
+    }
 }

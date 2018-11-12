@@ -82,7 +82,6 @@ export default class WorkoutPage extends Component {
     componentDidMount = async () => {
       const id = this.props.match.params.id
       const { data } = await axios.get(`/api/workouts/${id}/workout_exercises`)
-      console.log(data)
       const exercises = data.exercises.map( (exercise, i) => {
         return {
           name: exercise.name,
@@ -95,18 +94,18 @@ export default class WorkoutPage extends Component {
         title: data.workout.title
       }
       console.log({workout})
-      this.setState({ workout_exercises: exercises})
+      this.setState({ workout_exercises: exercises,  title: data.workout.title })
   }  
   render() {
     // const workout = this.state.workout
     const workoutExerciseList = this.state.workout_exercises.map((workout_exercise, i) => {
       return (
         <div key={i}>
-        Exercise: {workout_exercise.name} <br/> {workout_exercise.sets} sets of {workout_exercise.duration} reps
+        
+        {workout_exercise.name} <br/> {workout_exercise.sets} sets of {workout_exercise.duration} reps
         </div>
       )
-    })
-   
+    })   
     
     return (
       <StyledBackground>
