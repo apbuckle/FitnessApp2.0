@@ -16,13 +16,13 @@ li {
     display: inline-block;
     padding: 10px 40px;
     /* text-decoration: none; */
-    font-size: 3vw;
+    font-size: 3.5vw;
     letter-spacing: .5vw;
     font-style: italic;
     /* font-weight: bold; */
-    color: white;
-    border-right: 1px solid white;
-    text-shadow: 1.5px 1.5px 0 #ae4936;
+    color: #A19060;
+    border-right: 1px solid #80000A;
+    /* text-shadow: 1.5px 1.5px 0 #ae4936; */
 }
 `
 const StyledLink = styled(Link)`
@@ -31,17 +31,17 @@ padding: 10px 40px;
 /* align-items: center; */
 justify-content: center;
 text-decoration: none;
-border-right: 1px solid white;
-color: white;
+border-right: 1px solid #80000A;
+color: #A19060;
 cursor: pointer;
-font-size: 3vw;
+font-size: 3.5vw;
 font-style: italic;
 letter-spacing: .5vw;
-text-shadow: 1.5px 1.5px 0 #ae4936;
+/* text-shadow: 1.5px 1.5px 0 #ae4936; */
 `
 
 const StyledBody = styled.div`
-  background-color: black;
+  background-color: #A19060;
   background-position: absolute;
   background-repeat: no-repeat;
   background-size: cover;
@@ -51,7 +51,7 @@ const StyledBody = styled.div`
   justify-content: center;
   min-height: 100vh;
   max-width: 100%;
-  color: white;
+  color: black;
 `
 const StyledHeader = styled.div`
   background-color: black;
@@ -59,14 +59,15 @@ const StyledHeader = styled.div`
   display: flex;
   position: fixed;
   top: 0;
-  color: white;
-  text-shadow: 0px 3px 0 #ae4936;
+  color: #A19060;
+  text-shadow: 0px 3px 0 #80000A;
   font-size: 8vw;
   font-weight: bold;
   letter-spacing: 1vw;
   margin-top: 45px;
-  margin-left: 10px;
-  padding: 9px;
+  /* margin-left: 10px; */
+  padding: 15px;
+  width: 100%;
   /* margin: 20px; */
 `
 const StyledItems = styled.div`
@@ -79,7 +80,7 @@ const StyledItems = styled.div`
 const StyledList = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 140px;
+  margin-top: 150px;
   /* position: fixed; */
 `
 

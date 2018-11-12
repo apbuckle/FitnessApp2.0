@@ -20,8 +20,8 @@ const StyledBg1 = styled.div`
   max-width: 100%;
 `
 const StyledMenu = styled.div`
-  background-color: rgba(0,0,0, 0.7);
-  border: 0.5px solid #f1f1f1;
+  background-color: rgba(0,0,0, 0.8);
+  border: 1px solid #817144;
   position: center;
   /* transform: translate(-50%, -50%);
   z-index: 2;
@@ -33,10 +33,10 @@ const StyledMenu = styled.div`
   text-align: center;
   margin: 0;
   h1 {
-  font-size: 12vw;
+  font-size: 14vw;
   letter-spacing: 1vw;
-  color: white;
-  text-shadow: 0px 3px 0 #ae4936;
+  color: #817144;
+  text-shadow: 4px 4px 4px #80000A;
   }
 `
 const StyledMiddle = styled.div`
@@ -55,11 +55,11 @@ const StyledMiddle = styled.div`
   
   const StyledH1 = styled.div`
   position: absolute;
-  font-size: 8vw;
+  font-size: 8.5vw;
   letter-spacing: .5vw;
   font-weight: bold;
-  color: white;
-  text-shadow: 0px 2px 0 #ae4936;
+  color: #817144;
+  text-shadow: 0px 2px 2px #80000A;
   margin: 10px;
   
 `
@@ -87,13 +87,13 @@ li {
     display: inline-block;
     padding: 10px 40px;
     /* text-decoration: none; */
-    font-size: 3vw;
+    font-size: 3.5vw;
     letter-spacing: .5vw;
     font-style: italic;
     /* font-weight: bold; */
-    color: white;
-    border-right: 1px solid white;
-    text-shadow: 1.5px 1.5px 0 #ae4936;
+    color: #A19060;
+    border-right: 1px solid #80000A;
+    /* text-shadow: 1.5px 1.5px 0 #ae4936; */
     cursor: pointer;
 }
 `
@@ -104,20 +104,20 @@ padding: 10px 40px;
 /* align-items: center; */
 justify-content: center;
 text-decoration: none;
-border-right: 1px solid white;
-color: white;
+border-right: 1px solid #80000A;
+color: #A19060;
 cursor: pointer;
-font-size: 3vw;
+font-size: 3.5vw;
 /* font-style: italic; */
 letter-spacing: .5vw;
-text-shadow: 1.5px 1.5px 0 #ae4936;
+/* text-shadow: 1.5px 1.5px 0 #ae4936; */
 `
 
 const StyledHeader = styled.div`
   /* position: absolute; */
-  color: white;
-  text-shadow: 0px 3px 0 #ae4936;
-  font-size: 10vw;
+  color: #817144;
+  text-shadow: 0px 4px 3px #80000A;
+  font-size: 12vw;
   font-weight: bold;
   letter-spacing: 1vw;
   margin-top: 60px;
@@ -138,12 +138,13 @@ const StyledWorkoutLink = styled(Link)`
     display: inline-block;
     padding: 5px;
     text-decoration: none;
-    font-size: 5vw;
+    font-size: 6vw;
     letter-spacing: .5vw;
     /* font-weight: bold; */
-    color: white;
+    color: #817144;
     font-style: italic;
-    text-shadow: 1.5px 1.5px 0 #ae4936;
+    font-weight: bold;
+    /* text-shadow: 1.5px 1.5px 0 #80000A; */
     cursor: pointer;
 `
 
