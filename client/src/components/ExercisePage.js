@@ -14,7 +14,7 @@ top: 0;
 background: rgba(0,0,0);
 li {
     display: inline-block;
-    padding: 10px 40px;
+    padding: 10px 30px;
     /* text-decoration: none; */
     font-size: 3.5vw;
     letter-spacing: .5vw;
@@ -27,7 +27,7 @@ li {
 `
 const StyledLink = styled(Link)`
 display: inline-block;
-padding: 10px 40px;
+padding: 10px 30px;
 /* align-items: center; */
 justify-content: center;
 text-decoration: none;
@@ -47,13 +47,12 @@ const StyledBody = styled.div`
   background-size: cover;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   justify-content: center;
   min-height: 100vh;
   max-width: 100%;
   color: black;
-`
-const StyledHeader = styled.div`
+  `
+  const StyledHeader = styled.div`
   background-color: black;
   text-align: center;
   display: flex;
@@ -61,7 +60,7 @@ const StyledHeader = styled.div`
   top: 0;
   color: #A19060;
   text-shadow: 0px 3px 0 #80000A;
-  font-size: 8vw;
+  font-size: 3em;
   font-weight: bold;
   letter-spacing: 1vw;
   margin-top: 45px;
@@ -73,14 +72,17 @@ const StyledHeader = styled.div`
 const StyledItems = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: 25px;
-  padding: 5px;
+  margin-left: 20px;
+  padding: 6px;
   font-size: 3vw;
+  width: 150px;
+  border-bottom: 1px solid #80000A;
+  text-align: left;
 `
 const StyledList = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-top: 150px;
+  margin-top: 130px;
+  border-right: 2px solid #80000A;
+  width: 200px;
   /* position: fixed; */
 `
 
@@ -97,9 +99,11 @@ export default class ExercisePage extends Component {
     const exerciseList = this.state.exercises.map((exercise, i) => {
         return (
           <StyledItems key={i}>         
-          <Link to={`/exercises/${exercise.id}`}>{exercise.name} </Link>
-          <br/> Primary Muscles: {exercise.primary_muscles}
-          <br/> Secondary Muscles: {exercise.secondary_muscles}
+          {/* <Link to={`/exercises/${exercise.id}`}> */}
+          {exercise.name}
+           {/* </Link> */}
+          {/* <br/> Primary Muscles: {exercise.primary_muscles}
+          <br/> Secondary Muscles: {exercise.secondary_muscles} */}
             </StyledItems>
         )
     })
@@ -110,7 +114,7 @@ export default class ExercisePage extends Component {
         <StyledNav>
           <StyledLink to='/'>Terminus</StyledLink>
           <StyledLink to='/workouts'>Workouts</StyledLink>
-
+          <StyledLink to='/profile'>Profile</StyledLink>
         </StyledNav>
         <StyledBody>
           <StyledHeader>EXERCISES</StyledHeader>

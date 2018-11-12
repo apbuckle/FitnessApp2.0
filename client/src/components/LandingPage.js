@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import styled from 'styled-components'
-import { slide as Menu } from 'react-burger-menu'
+// import { slide as Menu } from 'react-burger-menu'
 
 const StyledBody = styled.div`
   background-color: black;
@@ -52,7 +52,7 @@ top: 0;
 background: rgba(0,0,0, .4);
 li {
     display: inline-block;
-    padding: 10px 40px;
+    padding: 10px 30px;
     /* text-decoration: none; */
     font-size: 3.5vw;
     letter-spacing: .5vw;
@@ -67,7 +67,7 @@ li {
 
 const StyledLink = styled(Link)`
 display: inline-block;
-padding: 10px 40px;
+padding: 10px 30px;
 /* align-items: center; */
 justify-content: center;
 text-decoration: none;
@@ -99,10 +99,10 @@ export default class LandingPage extends Component {
 
      return (
       <StyledBody>
-      <Menu>
+      {/* <Menu>
         <a id="home" className="menu-item" href="/">Terminus</a>
         <a onClick={ this.showSettings } className="menu-item--small" href="">Settings</a>
-          </Menu>
+          </Menu> */}
 
           <StyledBg1>
               <StyledMenu>
@@ -116,6 +116,7 @@ export default class LandingPage extends Component {
             <li>Terminus</li>
             <StyledLink to='/exercises'>Exercises</StyledLink>
             <StyledLink to='/workouts'>Workouts</StyledLink>
+            <StyledLink to='/profile'>Profile</StyledLink>
           </StyledNav> 
               
 

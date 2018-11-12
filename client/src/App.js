@@ -5,6 +5,7 @@ import WorkoutPage from './components/WorkoutPage';
 import ExercisePage from './components/ExercisePage';
 import LandingPage from './components/LandingPage';
 import SingleExercisePage from './components/SingleExercisePage';
+import Profile from './components/Profile';
 
 
 class App extends Component {
@@ -13,6 +14,7 @@ class App extends Component {
      <Router>
        <Switch>
          <Route exact path='/' component={LandingPage} />
+         <Route exact path='/profile' component={Profile} />
          <Route exact path='/workouts' component={Workouts} />
          <Route exact path='/workouts/:id' component={WorkoutPage} />
          <Route exact path='/exercises' component={ExercisePage} />

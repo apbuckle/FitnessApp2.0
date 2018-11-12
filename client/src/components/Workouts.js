@@ -84,20 +84,21 @@ letter-spacing: .5vw;
 `
 
 const StyledHeader = styled.div`
-/* position: absolute; */
-display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
-
-color: #817144;
-text-shadow: 0px 4px 3px #80000A;
-font-size: 12vw;
-font-weight: bold;
-letter-spacing: 1vw;
-/* margin-top: 60px; */
-margin: 10px;
+  background-color: black;
+  text-align: center;
+  display: flex;
+  position: fixed;
+  top: 0;
+  color: #A19060;
+  text-shadow: 0px 3px 0 #80000A;
+  font-size: 3em;
+  font-weight: bold;
+  letter-spacing: 1vw;
+  margin-top: 45px;
+  /* margin-left: 10px; */
+  padding: 15px;
+  width: 100%;
+  /* margin: 20px; */
 `
 const StyledList = styled.div`
 color: white;
@@ -176,7 +177,7 @@ export default class Workouts extends Component {
 
         </StyledNav>
 
-        <StyledHeader>Workouts</StyledHeader>
+        <StyledHeader>WORKOUT</StyledHeader>
           <StyledList>
           {workoutList} 
           </StyledList>      
