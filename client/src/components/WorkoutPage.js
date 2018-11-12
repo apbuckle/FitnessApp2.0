@@ -112,6 +112,7 @@ export default class WorkoutPage extends Component {
                   <StyledNav>
             <StyledLink to='/'>Terminus</StyledLink>
             <StyledLink to='/exercises'>Exercises</StyledLink>
+            <StyledLink to='/workouts'>Workouts</StyledLink>
 
           </StyledNav>
 
