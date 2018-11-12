@@ -106,7 +106,7 @@ export default class ExercisePage extends Component {
     return (
       <div>
         <StyledNav>
-          <StyledLink to='/'>Savage</StyledLink>
+          <StyledLink to='/'>Terminus</StyledLink>
         </StyledNav>
         <StyledBody>
           <StyledHeader>EXERCISES</StyledHeader>

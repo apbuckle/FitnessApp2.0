@@ -176,7 +176,7 @@ export default class LandingPage extends Component {
           <div className="top-container">
           </div>   
               <StyledMenu id="myHeader">
-                  <h1>IRON SAVAGE </h1>
+                  <h1>IRON TERMINUS </h1>
               </StyledMenu>
           </StyledBg1>
           
@@ -189,7 +189,7 @@ export default class LandingPage extends Component {
 
           <StyledStatic className="content">
           <StyledNav>
-            <li>Savage</li>
+            <li>Terminus</li>
             <StyledLink to='/exercises'>Exercises</StyledLink>
 
           </StyledNav>

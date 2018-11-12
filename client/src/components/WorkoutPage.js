@@ -99,7 +99,7 @@ export default class WorkoutPage extends Component {
 
           </StyledNav>
 
-        <h1>Savage</h1>
+        <h1>Terminus</h1>
         {workoutExerciseList}
 
       </StyledBackground>
