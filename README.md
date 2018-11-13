@@ -13,6 +13,8 @@ Github: https://github.com/apbuckle/FitnessApp2.0
 
 ERD: https://imgur.com/a/iMqjK7s
 
+
+
 resourcs: A complete guide to Forms in React
 https://medium.com/@agoiabeladeyemi/the-complete-guide-to-forms-in-react-d2ba93f32825
 
