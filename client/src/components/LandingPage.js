@@ -33,13 +33,12 @@ const StyledMenu = styled.div`
   text-align: center;
   margin: 0;
   h1 {
-  font-size: 14vw;
+  font-size: 10vw;
   letter-spacing: 1vw;
   color: #817144;
   text-shadow: 4px 4px 4px #80000A;
   }
 `
-
 
 const StyledNav = styled.nav`
 position: fixed;
@@ -49,35 +48,20 @@ margin: 0;
 padding: 0;
 overflow: hidden;
 top: 0;
-background: rgba(0,0,0, .4);
-li {
-    display: inline-block;
-    padding: 10px 30px;
-    /* text-decoration: none; */
-    font-size: 3.5vw;
-    letter-spacing: .5vw;
-    font-style: italic;
-    /* font-weight: bold; */
-    color: #A19060;
-    border-right: 1px solid #80000A;
-    /* text-shadow: 1.5px 1.5px 0 #ae4936; */
-    cursor: pointer;
-}
+background: rgba(0,0,0);
 `
 
 const StyledLink = styled(Link)`
 display: inline-block;
-padding: 10px 30px;
-/* align-items: center; */
+padding: 10px 15px;
 justify-content: center;
 text-decoration: none;
-border-right: 1px solid #80000A;
+border-right: 1.5px solid #80000A;
 color: #A19060;
 cursor: pointer;
-font-size: 3.5vw;
+font-size: 2.75vh;
 font-style: italic;
 letter-spacing: .5vw;
-/* text-shadow: 1.5px 1.5px 0 #ae4936; */
 `
 
 
@@ -113,7 +97,6 @@ export default class LandingPage extends Component {
 
 
           <StyledNav>
-            <li>Terminus</li>
             <StyledLink to='/exercises'>Exercises</StyledLink>
             <StyledLink to='/workouts'>Workouts</StyledLink>
             <StyledLink to='/profile'>Profile</StyledLink>

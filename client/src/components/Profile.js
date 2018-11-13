@@ -10,11 +10,17 @@ import Radio from './Radio'
 
 
 const StyledBody = styled.div`
-  /* background-color: black; */
+  background-color: #A19060;
+  background-position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
   max-width: 100%;
 `
-
 const StyledNav = styled.nav`
 position: fixed;
 width: 100%;
@@ -23,34 +29,19 @@ margin: 0;
 padding: 0;
 overflow: hidden;
 top: 0;
-background: rgba(0,0,0, .4);
-li {
-    display: inline-block;
-    padding: 10px 30px;
-    /* text-decoration: none; */
-    font-size: 3.5vw;
-    letter-spacing: .5vw;
-    font-style: italic;
-    /* font-weight: bold; */
-    color: #A19060;
-    border-right: 1px solid #80000A;
-    /* text-shadow: 1.5px 1.5px 0 #ae4936; */
-    cursor: pointer;
-}
+background: rgba(0,0,0);
 `
 const StyledLink = styled(Link)`
 display: inline-block;
-padding: 10px 30px;
-/* align-items: center; */
+padding: 10px 15px;
 justify-content: center;
 text-decoration: none;
-border-right: 1px solid #80000A;
+border-right: 1.5px solid #80000A;
 color: #A19060;
 cursor: pointer;
-font-size: 3.5vw;
+font-size: 2.75vh;
 font-style: italic;
 letter-spacing: .5vw;
-/* text-shadow: 1.5px 1.5px 0 #ae4936; */
 `
 const StyledHeader = styled.div`
   background-color: black;
@@ -60,15 +51,39 @@ const StyledHeader = styled.div`
   top: 0;
   color: #A19060;
   text-shadow: 0px 3px 0 #80000A;
-  font-size: 3em;
+  font-size: 3.2em;
   font-weight: bold;
   letter-spacing: 1vw;
-  margin-top: 45px;
-  /* margin-left: 10px; */
+  margin-top: 40px;
   padding: 15px;
   width: 100%;
-  /* margin: 20px; */
-
+`
+const StyledForm = styled.div`
+display:flex;
+flex-direction: column;
+justify-content: center;
+align-content: center;
+text-align: center;
+width: 80%;
+border: 1px solid black;
+padding: 5px;
+.form-contorl {
+    width: 75%;
+  border: 1px solid black;
+  padding: 10px; 
+}
+.control-error {
+  border: 2px solid red;
+}
+.input {
+    width: 50%;
+    height: 20px;
+    font-size: 16px;
+    padding: 3px;
+}
+`
+const StyledTextInput = styled.div`
+    width: 50%;
 `
 
 export default class Profile extends Component {
@@ -163,15 +178,19 @@ export default class Profile extends Component {
   render() {
     return (
         
-      <StyledBody>
-           {/* <StyledNav>
-            <li>Terminus</li>
-            <StyledLink to='/exercises'>Exercises</StyledLink>
+      <div>
+           <StyledNav>
+           <StyledLink to='/'>Terminus</StyledLink>
+
             <StyledLink to='/workouts'>Workouts</StyledLink>
+            <StyledLink to='/exercises'>Exercises</StyledLink>
+
           </StyledNav> 
-          <StyledHeader>PROFILE</StyledHeader> */}
+          <StyledBody>
+          <StyledHeader>PROFILE</StyledHeader>
+          <StyledForm>
           <h3>User Name</h3>
-          <TextInput name="name"
+          <TextInput name="name" class="input"
                 placeholder={this.state.formControls.name.placeholder}
                 value={this.state.formControls.name.value}
                 onChange={this.handleChange}
@@ -179,7 +198,7 @@ export default class Profile extends Component {
                 valid={this.state.formControls.name.valid}
                  />
                  <h3>Age</h3>
-                 <TextInput name="age"
+                 <TextInput name="age" class="input"
                                  placeholder={this.state.formControls.age.placeholder}
                                  value={this.state.formControls.age.value}
                                  onChange={this.handleChange}
@@ -212,8 +231,9 @@ export default class Profile extends Component {
                 </button>
             
 
-
+</StyledForm>
       </StyledBody>
+      </div>
     )
   }
 }

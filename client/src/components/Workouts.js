@@ -23,25 +23,24 @@ const StyledBody = styled.div`
 // `
 const StyledH1 = styled.div`
 position: fixed;
-font-size: 4vw;
+text-align: center;
+font-size: 1.5em;
 letter-spacing: .5vw;
 font-weight: bold;
+flex-wrap: wrap;
 color: #817144;
 text-shadow: 0px 2px 2px #80000A;
-margin: 10px;
+margin-top: 70px;
 font-style: italic;
 `
 const StyledMiddle = styled.div`
-  background-color: black;
-  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   align-content: center;
-  min-height: 25vh;
+  min-height: 30vh;
   max-width: 100%;
-  /* color: white; */
   `
 
 const StyledNav = styled.nav`
@@ -52,35 +51,19 @@ margin: 0;
 padding: 0;
 overflow: hidden;
 top: 0;
-background: rgba(0,0,0, .4);
-li {
-  display: inline-block;
-  padding: 10px 40px;
-  /* text-decoration: none; */
-  font-size: 3.5vw;
-  letter-spacing: .5vw;
-  font-style: italic;
-  /* font-weight: bold; */
-  color: #A19060;
-  border-right: 1px solid #80000A;
-  /* text-shadow: 1.5px 1.5px 0 #ae4936; */
-  cursor: pointer;
-}
+background: rgba(0,0,0);
 `
-
 const StyledLink = styled(Link)`
 display: inline-block;
-padding: 10px 40px;
-/* align-items: center; */
+padding: 10px 15px;
 justify-content: center;
 text-decoration: none;
-border-right: 1px solid #80000A;
+border-right: 1.5px solid #80000A;
 color: #A19060;
 cursor: pointer;
-font-size: 3.5vw;
+font-size: 2.75vh;
 font-style: italic;
 letter-spacing: .5vw;
-/* text-shadow: 1.5px 1.5px 0 #ae4936; */
 `
 
 const StyledHeader = styled.div`
@@ -91,17 +74,14 @@ const StyledHeader = styled.div`
   top: 0;
   color: #A19060;
   text-shadow: 0px 3px 0 #80000A;
-  font-size: 3em;
+  font-size: 3.2em;
   font-weight: bold;
   letter-spacing: 1vw;
-  margin-top: 45px;
-  /* margin-left: 10px; */
+  margin-top: 40px;
   padding: 15px;
   width: 100%;
-  /* margin: 20px; */
 `
 const StyledList = styled.div`
-color: white;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -112,16 +92,13 @@ margin: 10px;
 
 `
 const StyledWorkoutLink = styled(Link)`
-  display: inline-block;
   padding: 5px;
   text-decoration: none;
-  font-size: 6vw;
+  font-size: 2.5em;
   letter-spacing: .5vw;
-  /* font-weight: bold; */
   color: #817144;
   font-style: italic;
   font-weight: bold;
-  /* text-shadow: 1.5px 1.5px 0 #80000A; */
   cursor: pointer;
 `
 
@@ -167,13 +144,13 @@ export default class Workouts extends Component {
 
     return (
       <StyledBody>
-      {/* <StyledDiv>        */}
         <StyledMiddle>          
-          <StyledH1>YOU CAN DO ANYTHING ONE TIME!</StyledH1>
+          <StyledH1>"YOU CAN DO ANYTHING ONE TIME!"</StyledH1>
           </StyledMiddle>
           <StyledNav> 
           <StyledLink to='/'>Terminus</StyledLink>
           <StyledLink to='/exercises'>Exercises</StyledLink>
+          <StyledLink to='/profile'>Profile</StyledLink>
 
         </StyledNav>
 
@@ -181,7 +158,6 @@ export default class Workouts extends Component {
           <StyledList>
           {workoutList} 
           </StyledList>      
-      {/* </StyledDiv> */}
       </StyledBody>
     )
     }

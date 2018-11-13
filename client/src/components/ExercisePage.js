@@ -12,32 +12,18 @@ padding: 0;
 overflow: hidden;
 top: 0;
 background: rgba(0,0,0);
-li {
-    display: inline-block;
-    padding: 10px 30px;
-    /* text-decoration: none; */
-    font-size: 3.5vw;
-    letter-spacing: .5vw;
-    font-style: italic;
-    /* font-weight: bold; */
-    color: #A19060;
-    border-right: 1px solid #80000A;
-    /* text-shadow: 1.5px 1.5px 0 #ae4936; */
-}
 `
 const StyledLink = styled(Link)`
 display: inline-block;
-padding: 10px 30px;
-/* align-items: center; */
+padding: 10px 15px;
 justify-content: center;
 text-decoration: none;
-border-right: 1px solid #80000A;
+border-right: 1.5px solid #80000A;
 color: #A19060;
 cursor: pointer;
-font-size: 3.5vw;
+font-size: 2.75vh;
 font-style: italic;
 letter-spacing: .5vw;
-/* text-shadow: 1.5px 1.5px 0 #ae4936; */
 `
 
 const StyledBody = styled.div`
@@ -60,21 +46,19 @@ const StyledBody = styled.div`
   top: 0;
   color: #A19060;
   text-shadow: 0px 3px 0 #80000A;
-  font-size: 3em;
+  font-size: 3.2em;
   font-weight: bold;
   letter-spacing: 1vw;
-  margin-top: 45px;
-  /* margin-left: 10px; */
+  margin-top: 40px;
   padding: 15px;
   width: 100%;
-  /* margin: 20px; */
 `
 const StyledItems = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: 20px;
+  margin-left: 15px;
   padding: 6px;
-  font-size: 3vw;
+  font-size: 2.5vh;
   width: 150px;
   border-bottom: 1px solid #80000A;
   text-align: left;
