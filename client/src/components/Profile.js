@@ -248,7 +248,6 @@ export default class Profile extends Component {
 
     return (
         <StyledBody>
-   {/* <div> */}
            <StyledNav>
            <StyledLink to='/'>Terminus</StyledLink>
           </StyledNav> 
@@ -349,7 +348,6 @@ export default class Profile extends Component {
      {profileInfo}
  </div>
       </StyledBody>
-      /* </div> */
     )
   }
 }
