@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import styled from 'styled-components'
+import TextInput from '../TextInput'
+import validate from '../Validator'
 
 
 const StyledBody = styled.div`
@@ -67,17 +69,69 @@ const StyledHeader = styled.div`
 `
 
 export default class Profile extends Component {
+    state = {
+        formControls: {
+            name: {
+                value:'',
+                placeholder:'Your Name',
+                valid: false,
+                touched: false,
+                validationRules: {
+                    minLength: 3,
+                    isRequired: true
+                }
+
+            }
+    }
+}
+
+    handleChange = (event) => {
+        const name = event.target.name
+        const value = event.target.value
+
+        const updatedControls = {
+            ...this.state.formControls
+        }
+        const updatedFormElement = {
+            ...updatedControls[name]
+        }
+        updatedFormElement.value = value
+        updatedFormElement.touched = true
+        updatedFormElement.valid = validate(value, updatedFormElement.validationRules)
+
+        updatedControls[name] = updatedFormElement
+
+        this.setState({
+            formControls: updatedControls
+            
+        })
+    }
+
+    formSubmitHandler = () => {
+        console.dir(this.state.formControls)
+    }
+
   render() {
     return (
         
       <StyledBody>
-
-           <StyledNav>
+           {/* <StyledNav>
             <li>Terminus</li>
             <StyledLink to='/exercises'>Exercises</StyledLink>
             <StyledLink to='/workouts'>Workouts</StyledLink>
           </StyledNav> 
-          <StyledHeader>PROFILE</StyledHeader>
+          <StyledHeader>PROFILE</StyledHeader> */}
+          <TextInput name="name"
+                placeholder={this.state.formControls.name.placeholder}
+                value={this.state.formControls.name.value}
+                onChange={this.handleChange}
+                touched={this.state.formControls.name.touched}
+                valid={this.state.formControls.name.valid}
+                 />
+
+                <button onClick={this.formSubmitHandler}> Submit </button>
+            
+
 
       </StyledBody>
     )
