@@ -11,9 +11,8 @@ Heroku: https://ironterminus.herokuapp.com/
 
 Github: https://github.com/apbuckle/FitnessApp2.0
 
-ERD:
-https://imgur.com/a/iMqjK7s
-<blockquote class="imgur-embed-pub" lang="en" data-id="a/iMqjK7s"><a href="//imgur.com/iMqjK7s">ERD for fitness app</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+ERD: https://imgur.com/a/iMqjK7s
+
 
 Tech Used:
 React
