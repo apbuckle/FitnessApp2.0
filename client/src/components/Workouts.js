@@ -112,25 +112,25 @@ export default class Workouts extends Component {
     this.setState({ workouts: response.data })
 }  
   
-  // handleChange = (event) => {
-  //   const newWorkout = { ...this.state.newWorkout }
-  //   newWorkout[event.target.name] = event.target.value
-  //   this.setState({ newWorkout })
-  // }
+  handleChange = (event) => {
+    const newWorkout = { ...this.state.newWorkout }
+    newWorkout[event.target.name] = event.target.value
+    this.setState({ newWorkout })
+  }
   
-  // handleSubmit = async (event) => {
-  //   event.preventDefault()
-  //   const response = await axios.post('/api/workouts', this.state.newWorkout)
-  //   const workouts = [...this.state.workouts]
-  //   workouts.push(response.data)
-  //   this.setState({ workouts })
-  // }
+  handleSubmit = async (event) => {
+    event.preventDefault()
+    const response = await axios.post('/api/workouts', this.state.newWorkout)
+    const workouts = [...this.state.workouts]
+    workouts.push(response.data)
+    this.setState({ workouts })
+  }
   
-  // handleDelete = async (workoutId) => {
-  //   const deleteResponse = await axios.delete(`/api/workouts/${workoutId}`)
-  //   const filteredWorkouts = this.state.workouts.filter(workout => workoutId !== workout.id)
-  //   this.setState({ workouts: filteredWorkouts })
-  // }
+  handleDelete = async (workoutId) => {
+    const deleteResponse = await axios.delete(`/api/workouts/${workoutId}`)
+    const filteredWorkouts = this.state.workouts.filter(workout => workoutId !== workout.id)
+    this.setState({ workouts: filteredWorkouts })
+  }
   
 
   render() {
