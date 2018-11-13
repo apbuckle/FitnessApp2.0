@@ -77,7 +77,7 @@ export default class Profile extends Component {
         formControls: {
             name: {
                 value:'',
-                placeholder:'Your Name',
+                placeholder:'First Name',
                 valid: false,
                 validationRules: {
                     minLength: 3,
@@ -85,7 +85,17 @@ export default class Profile extends Component {
                 },
                 touched: false
             },
-            gender: {
+            age: {
+                value:'',
+                placeholder:'Your age',
+                valid: false,
+                touched: false,
+                validationRules: {
+                    minLength: 2,
+                    isRequired:true
+                }
+            },
+            level: {
                 value: '',
                 placeholder: 'Your Gender',
                 valid: false,
@@ -94,8 +104,9 @@ export default class Profile extends Component {
                     isRequired: true,
                 },
                 options: [
-                    {value: 'male', displayValue: 'Male'},
-                    {value: 'female', displayValue: 'Female'}
+                    {value: 'beginner', displayValue: 'New'},
+                    {value: 'some experience', displayValue: 'Some Experience'},
+                    {value: 'advanced', displayValue: 'Advanced'}
                 ]
             },
             my_radio: {
@@ -105,8 +116,8 @@ export default class Profile extends Component {
                 touched: false,
                 validationRules: {},
                 options: [
-                    {value: 0, displayValue: 'No'},
-                    {value: 1, displayValue: 'Yes'}
+                    {value: 0, displayValue: 'Yes'},
+                    {value: 1, displayValue: 'No'}
                 ]
             }
     }
@@ -159,6 +170,7 @@ export default class Profile extends Component {
             <StyledLink to='/workouts'>Workouts</StyledLink>
           </StyledNav> 
           <StyledHeader>PROFILE</StyledHeader> */}
+          <h3>User Name</h3>
           <TextInput name="name"
                 placeholder={this.state.formControls.name.placeholder}
                 value={this.state.formControls.name.value}
@@ -166,16 +178,29 @@ export default class Profile extends Component {
                 touched={this.state.formControls.name.touched}
                 valid={this.state.formControls.name.valid}
                  />
-                           <Select name="gender"
-                  value={this.state.formControls.gender.value}
-                  onChange={this.changeHandler}
-                  options={this.state.formControls.gender.options}
-                  touched={this.state.formControls.gender.touched}
-                  valid={this.state.formControls.gender.valid}
-          />
+                 <h3>Age</h3>
+                 <TextInput name="age"
+                                 placeholder={this.state.formControls.age.placeholder}
+                                 value={this.state.formControls.age.value}
+                                 onChange={this.handleChange}
+                                 touched={this.state.formControls.age.touched}
+                                 valid={this.state.formControls.age.valid}
+                                  />
+                 
+
+                 <h3>Workout Level</h3>
+                           <Select name="level"
+                  value={this.state.formControls.level.value}
+                  onChange={this.handleChange}
+                  options={this.state.formControls.level.options}
+                  touched={this.state.formControls.level.touched}
+                  valid={this.state.formControls.level.valid}
+                  />
+                  
+            <h3>Do you lift?</h3>
  <Radio name="my_radio"
             value={this.state.formControls.my_radio.value}
-            onChange={this.changeHandler}
+            onChange={this.handleChange}
             options={this.state.formControls.my_radio.options}
             touched={this.state.formControls.my_radio.touched}
             valid={this.state.formControls.my_radio.valid}
