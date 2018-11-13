@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
+import './App.css'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import styled from 'styled-components'
-import TextInput from '../TextInput'
-import validate from '../Validator'
+import TextInput from './TextInput'
+import validate from './Validator'
+import Select from './SelectOption'
+import Radio from './Radio'
 
 
 const StyledBody = styled.div`
-  background-color: black;
+  /* background-color: black; */
   min-height: 100vh;
   max-width: 100%;
 `
@@ -70,17 +73,41 @@ const StyledHeader = styled.div`
 
 export default class Profile extends Component {
     state = {
+        formIsValid: false,
         formControls: {
             name: {
                 value:'',
                 placeholder:'Your Name',
                 valid: false,
-                touched: false,
                 validationRules: {
                     minLength: 3,
                     isRequired: true
-                }
-
+                },
+                touched: false
+            },
+            gender: {
+                value: '',
+                placeholder: 'Your Gender',
+                valid: false,
+                touched: false,
+                validationRules: {
+                    isRequired: true,
+                },
+                options: [
+                    {value: 'male', displayValue: 'Male'},
+                    {value: 'female', displayValue: 'Female'}
+                ]
+            },
+            my_radio: {
+                value: '',
+                placeholder: 'Do you even lift?',
+                valid: false,
+                touched: false,
+                validationRules: {},
+                options: [
+                    {value: 0, displayValue: 'No'},
+                    {value: 1, displayValue: 'Yes'}
+                ]
             }
     }
 }
@@ -101,15 +128,26 @@ export default class Profile extends Component {
 
         updatedControls[name] = updatedFormElement
 
+        let formIsValid = true;
+        for (let inputIdentifier in updatedControls) {
+          formIsValid = updatedControls[inputIdentifier].valid && formIsValid;
+                    
+        }
+
         this.setState({
-            formControls: updatedControls
+            formControls: updatedControls,
+            formIsValid: formIsValid
             
         })
     }
 
     formSubmitHandler = () => {
-        console.dir(this.state.formControls)
+        const formData = {};
+	for (let formElementId in this.state.formControls) {
+	    formData[formElementId] = this.state.formControls[formElementId].value;
     }
+}
+
 
   render() {
     return (
@@ -128,8 +166,25 @@ export default class Profile extends Component {
                 touched={this.state.formControls.name.touched}
                 valid={this.state.formControls.name.valid}
                  />
+                           <Select name="gender"
+                  value={this.state.formControls.gender.value}
+                  onChange={this.changeHandler}
+                  options={this.state.formControls.gender.options}
+                  touched={this.state.formControls.gender.touched}
+                  valid={this.state.formControls.gender.valid}
+          />
+ <Radio name="my_radio"
+            value={this.state.formControls.my_radio.value}
+            onChange={this.changeHandler}
+            options={this.state.formControls.my_radio.options}
+            touched={this.state.formControls.my_radio.touched}
+            valid={this.state.formControls.my_radio.valid}
+          />
 
-                <button onClick={this.formSubmitHandler}> Submit </button>
+                <button onClick={this.formSubmitHandler}
+                        disabled={!this.state.formIsValid}> 
+                        Submit
+                </button>
             
 
 
