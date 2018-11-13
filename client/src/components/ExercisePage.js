@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import styled from 'styled-components'
+import './App.css'
 
 const StyledNav = styled.nav`
 position: fixed;
@@ -53,7 +54,7 @@ const StyledBody = styled.div`
   padding: 15px;
   width: 100%;
 `
-const StyledItems = styled.div`
+const StyledItems = styled.span`
   display: flex;
   flex-direction: column;
   margin-left: 15px;
@@ -62,12 +63,15 @@ const StyledItems = styled.div`
   width: 150px;
   border-bottom: 1px solid #80000A;
   text-align: left;
+  
 `
 const StyledList = styled.div`
   margin-top: 130px;
   border-right: 2px solid #80000A;
   width: 200px;
   /* position: fixed; */
+`
+const StyledHidden = styled.div`
 `
 
 export default class ExercisePage extends Component {
@@ -82,15 +86,18 @@ export default class ExercisePage extends Component {
   render() {
     const exerciseList = this.state.exercises.map((exercise, i) => {
         return (
-          <StyledItems key={i}>         
-          {/* <Link to={`/exercises/${exercise.id}`}> */}
-          {exercise.name}
-           {/* </Link> */}
-          {/* <br/> Primary Muscles: {exercise.primary_muscles}
-          <br/> Secondary Muscles: {exercise.secondary_muscles} */}
-            </StyledItems>
+          <StyledItems idName="span" key={i}>
+        <Link to={`/exercises/${exercise.id}`}>
+        {exercise.name}
+          </Link>
+           <StyledHidden idName="div">
+          <br/> Primary Muscles: {exercise.primary_muscles}
+          <br/> Secondary Muscles: {exercise.secondary_muscles}
+          </StyledHidden>
+          </StyledItems>
         )
     })
+  
 
   
     return (

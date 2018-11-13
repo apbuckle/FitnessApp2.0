@@ -1,11 +1,9 @@
-/* .form-control {
-  width: 50%;
-  border: 1px solid #ccc;
-  padding: 10px; 
+#div {
+  display: none;
 }
 
-.control-error {
-  border: 1px solid red;
-} */
+#span:hover + #div {
+  display: block;
+}
 
 
